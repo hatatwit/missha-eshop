@@ -10,9 +10,11 @@ import Cart from "../Cart/Cart";
 import MisshaLogo from "../../assets/favicon.png";
 
 import "./Navbar.scss";
+import { useSelector } from "react-redux";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const data = useSelector(state => state.cart.products)
     return (
         <div className="navbar">
             <div className="wrapper">
@@ -45,7 +47,7 @@ export default function Navbar() {
                         <FavoriteBorderOutlined/>
                         <div className="cartIcon" onClick={() => setOpen(!open)}>
                             <ShoppingCartOutlined/> 
-                            <span>0</span>
+                            <span>{data.length}</span>
                         </div>
                     </div>
                 </div>
