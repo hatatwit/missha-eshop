@@ -20,7 +20,7 @@ export default function Navbar() {
             <div className="wrapper">
                 <div className="left-navbar">
                     <div className="item">
-                        <Link to="/products/0">New</Link>
+                        <Link to="/products/3">New</Link>
                     </div>
                     <div className="item">
                         <Link to="/products/1">Women</Link>

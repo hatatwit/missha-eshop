@@ -17,17 +17,15 @@ export default function Footer() {
           <h1>Categories</h1>
           <span>Women</span>
           <span>Men</span>
-          <span>Shoes</span>
-          <span>Accessories</span>
+          <span>Trending</span>
           <span>New Arrivals</span>
         </div>
         <div className="item">
-          <h1>Links</h1>
-          <span>FAQ</span>
-          <span>Pages</span>
-          <span>Stores</span>
-          <span>Compare</span>
-          <span>Cookies</span>
+          <h1>Account</h1>
+          <span>Order</span>
+          <span>Favorite</span>
+          <span>Register</span>
+          <span>Sign In</span>
         </div>
         <div className="item">
           <h1>About</h1>

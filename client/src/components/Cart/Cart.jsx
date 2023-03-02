@@ -1,16 +1,17 @@
 import { DeleteOutlined } from "@mui/icons-material";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { decrement } from "../../utils/redux/cartReducer";
-import {loadStripe} from '@stripe/stripe-js';
+import { useDispatch } from "react-redux";
 import { makeRequest } from "../../makeRequest";
+import { loadStripe } from "@stripe/stripe-js";
 
 import "./Cart.scss";
-import axios from "axios";
 
 export default function Cart() {
   const products = useSelector((state) => state.cart.products);
+  const dispatch = useDispatch();
 
-  const calTotal = () => {
+  const totalPrice = () => {
     let total = 0;
     products.forEach((item) => {
       total += item.quantity * item.price;
@@ -18,28 +19,27 @@ export default function Cart() {
     return total.toFixed(2);
   };
 
-  const dispatch = useDispatch();
-
   const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
-
   const handlePayment = async () => {
     try {
       const stripe = await stripePromise;
-      const res = await makeRequest.post("/orders", {products});
-      await stripe.redirectToCheckout({sessionId: res.data.stripeSession.id,
-      })
-    } catch (error) {
-      console.log(error);
+      const res = await makeRequest.post("/orders", {
+        products,
+      });
+      await stripe.redirectToCheckout({
+        sessionId: res.data.stripeSession.id,
+      });
+
+    } catch (err) {
+      console.log(err);
     }
-  }
-
-
+  };
   return (
     <div className="cart">
       <h1>Your Bag</h1>
       {products?.map((item) => (
         <div className="item" key={item.id}>
-          <img
+         <img
             src={process.env.REACT_APP_API_UPLOAD_URL + item.img}
             alt={item.title}
           />
@@ -58,9 +58,10 @@ export default function Cart() {
       ))}
       <div className="total">
         <span>SUBTOTAL</span>
-        <span>${calTotal()}</span>
+        <span>${totalPrice()}</span>
       </div>
       <button onClick={handlePayment}>CONTINUE TO CHECKOUT</button>
     </div>
   );
-}
+};
+
