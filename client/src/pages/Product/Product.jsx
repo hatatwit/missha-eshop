@@ -1,6 +1,5 @@
 import {
   AddShoppingCart,
-  BalanceOutlined,
   FavoriteBorder,
 } from "@mui/icons-material";
 import { useState } from "react";
@@ -85,23 +84,28 @@ export default function Product() {
                 <button onClick={() => setSize("X Large")}>X Large</button>
               </div>
             </div>
-            <button className="add" onClick={() => dispatch(increment({
-              id: data.id,
-              title: data.attributes.title,
-              price: data.attributes.price,
-              img: data.attributes.img.data.attributes.url,
-              quantity,
-              size
-            }))}>
-              <AddShoppingCart />
-              ADD TO CART
-            </button>
             <div className="links">
               <div className="item">
-                <FavoriteBorder /> ADD TO WISH
+                <button
+                  className="add"
+                  onClick={() =>
+                    dispatch(
+                      increment({
+                        id: data.id,
+                        title: data.attributes.title,
+                        price: data.attributes.price,
+                        img: data.attributes.img.data.attributes.url,
+                        quantity,
+                        size,
+                      })
+                    )
+                  }
+                >
+                  <AddShoppingCart /> ADD TO CART
+                </button>
               </div>
               <div className="item">
-                <BalanceOutlined /> COMPARE
+                <FavoriteBorder /> ADD TO WISH
               </div>
             </div>
             <hr />
@@ -109,10 +113,14 @@ export default function Product() {
               <span>PRODUCT DETAILS</span>
               <p>{data?.attributes?.desc}</p>
               <span>
-                Tags: 
-                {data?.attributes?.sub_categories?.data.map(subcat => {return " " + subcat?.attributes?.title})}
-                {data?.attributes?.categories?.data.map(subcat => {return ", " + subcat?.attributes?.title})}
-                </span>
+                Tags:
+                {data?.attributes?.sub_categories?.data.map((subcat) => {
+                  return " " + subcat?.attributes?.title;
+                })}
+                {data?.attributes?.categories?.data.map((subcat) => {
+                  return ", " + subcat?.attributes?.title;
+                })}
+              </span>
             </div>
           </div>
         </>

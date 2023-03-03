@@ -7,14 +7,17 @@ import {
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Cart from "../Cart/Cart";
+import SearchBar from "../SearchBar/SearchBar";
 import MisshaLogo from "../../assets/favicon.png";
-
-import "./Navbar.scss";
 import { useSelector } from "react-redux";
 
+import "./Navbar.scss";
+
 export default function Navbar() {
-    const [open, setOpen] = useState(false);
-    const data = useSelector(state => state.cart.products)
+    const [cartOpen, setCartOpen] = useState(false);
+    const [searchOpen, setSearchOpen] = useState(false);
+    const data = useSelector(state => state.cart.products);
+
     return (
         <div className="navbar">
             <div className="wrapper">
@@ -42,17 +45,20 @@ export default function Navbar() {
                         <Link to="/">Contact</Link>
                     </div>
                     <div className="icons">
-                        <Search/>
+                        <div className="searchIcon" onClick={() => setSearchOpen(!searchOpen)}>
+                            <Search/> 
+                        </div>
                         <PersonOutlineOutlined/> 
                         <FavoriteBorderOutlined/>
-                        <div className="cartIcon" onClick={() => setOpen(!open)}>
+                        <div className="cartIcon" onClick={() => setCartOpen(!cartOpen)}>
                             <ShoppingCartOutlined/> 
                             <span>{data.length}</span>
                         </div>
                     </div>
                 </div>
             </div>
-            {open && <Cart/>}
+            {cartOpen && <Cart/>}
+            {searchOpen && <SearchBar onClose={() => setSearchOpen(!searchOpen)}/>}
         </div>
     )
 }
