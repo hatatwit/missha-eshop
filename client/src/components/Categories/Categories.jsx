@@ -36,7 +36,7 @@ export default function Categories() {
             alt=""
           />
           <button>
-            <Link to="/products/1" className="link">
+            <Link to="/products/3" className="link">
               New Arrivals
             </Link>
           </button>
@@ -51,7 +51,7 @@ export default function Categories() {
                 alt=""
               />
               <button>
-                <Link to="/products/1" className="link">
+                <Link to="/products/2" className="link">
                   Men
                 </Link>
               </button>

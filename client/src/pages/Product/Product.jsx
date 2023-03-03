@@ -37,7 +37,7 @@ export default function Product() {
                   process.env.REACT_APP_API_UPLOAD_URL +
                   data?.attributes?.img?.data?.attributes?.url
                 }
-                alt=""
+                alt="img"
                 onClick={(e) => setSelectedImg("img")}
               />
               <img
@@ -45,7 +45,7 @@ export default function Product() {
                   process.env.REACT_APP_API_UPLOAD_URL +
                   data?.attributes?.img2?.data?.attributes?.url
                 }
-                alt=""
+                alt="img2"
                 onClick={(e) => setSelectedImg("img2")}
               />
             </div>
@@ -55,7 +55,7 @@ export default function Product() {
                   process.env.REACT_APP_API_UPLOAD_URL +
                   data?.attributes[selectedImg]?.data?.attributes?.url
                 }
-                alt=""
+                alt="mainImg"
               />
             </div>
           </div>
@@ -108,7 +108,11 @@ export default function Product() {
             <div className="info">
               <span>PRODUCT DETAILS</span>
               <p>{data?.attributes?.desc}</p>
-              <span>Tags: T-shirt, Men, Tops</span>
+              <span>
+                Tags: 
+                {data?.attributes?.sub_categories?.data.map(subcat => {return " " + subcat?.attributes?.title})}
+                {data?.attributes?.categories?.data.map(subcat => {return ", " + subcat?.attributes?.title})}
+                </span>
             </div>
           </div>
         </>
