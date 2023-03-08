@@ -2,14 +2,17 @@ import {
     Search, 
     PersonOutlineOutlined, 
     FavoriteBorderOutlined, 
-    ShoppingCartOutlined 
+    ShoppingCartOutlined,
+    LogoutOutlined 
 } from "@mui/icons-material";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Cart from "../Cart/Cart";
 import SearchBar from "../SearchBar/SearchBar";
 import MisshaLogo from "../../assets/favicon.png";
-import { useSelector } from "react-redux";
 
 import "./Navbar.scss";
 
@@ -17,6 +20,9 @@ export default function Navbar() {
     const [cartOpen, setCartOpen] = useState(false);
     const [searchOpen, setSearchOpen] = useState(false);
     const data = useSelector(state => state.cart.products);
+
+    const navigate = useNavigate();
+    const [jwt, setJwt] = useContext(UserContext);
 
     return (
         <div className="navbar">
@@ -48,8 +54,14 @@ export default function Navbar() {
                         <div className="searchIcon" onClick={() => setSearchOpen(!searchOpen)}>
                             <Search/> 
                         </div>
-                        <PersonOutlineOutlined/> 
-                        <FavoriteBorderOutlined/>
+                        {jwt ? (
+                            <>
+                                <LogoutOutlined onClick={() => {setJwt(null); navigate("/")}}/>
+                                <FavoriteBorderOutlined/>
+                            </>
+                        ) : (
+                            <Link to="/auth"><PersonOutlineOutlined/></Link> 
+                        )}
                         <div className="cartIcon" onClick={() => setCartOpen(!cartOpen)}>
                             <ShoppingCartOutlined/> 
                             <span>{data.length}</span>

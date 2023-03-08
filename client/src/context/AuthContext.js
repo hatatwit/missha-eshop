@@ -1,9 +1,13 @@
-import { createContext, useContext } from "react";
+import { createContext, useState } from "react";
 
-export const AuthContext = createContext({
-  user: undefined,
-  isLoading: false,
-  setUser: () => {},
-});
+export const UserContext = createContext();
 
-export const useAuthContext = () => useContext(AuthContext);
+export const UserProvider = (props) => {
+  const [jwt, setJwt] = useState(null);
+
+  return (
+    <UserContext.Provider value={[jwt, setJwt]}>
+      {props.children}
+    </UserContext.Provider>
+  );
+};

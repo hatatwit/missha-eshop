@@ -3,12 +3,13 @@ import {
   RouterProvider,
   Outlet
 } from "react-router-dom";
+import "@stripe/stripe-js";
 import Home from "./pages/Home/Home";
 import Product from "./pages/Product/Product";
 import Products from "./pages/Products/Products";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import "@stripe/stripe-js";
+import Auth from "./pages/Authentication/Auth";
 
 
 const Layout = () => {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/product/:id",
         element: <Product/>
+      },
+      {
+        path: "/auth",
+        element: <Auth/>
       },
     ]
   }
