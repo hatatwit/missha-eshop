@@ -10,6 +10,7 @@ import Products from "./pages/Products/Products";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Auth from "./pages/Authentication/Auth";
+import Favorite from "./pages/Favorite/Favorite";
 
 
 const Layout = () => {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/product/:id",
         element: <Product/>
+      },
+      {
+        path: "/favorite",
+        element: <Favorite/>
       },
       {
         path: "/auth",

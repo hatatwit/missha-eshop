@@ -33,6 +33,7 @@ export default function Login() {
         userData
       );
       setJwt(res.data.jwt);
+      console.log("Response: " + JSON.stringify(res));
       console.log("Login successfully!");
     } catch (error) {
       console.log(error);

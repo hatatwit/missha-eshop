@@ -25,52 +25,59 @@ export default function Navbar() {
     const [jwt, setJwt] = useContext(UserContext);
 
     return (
-        <div className="navbar">
-            <div className="wrapper">
-                <div className="left-navbar">
-                    <div className="item">
-                        <Link to="/products/3">New</Link>
-                    </div>
-                    <div className="item">
-                        <Link to="/products/1">Women</Link>
-                    </div>
-                    <div className="item">
-                        <Link to="/products/2">Men</Link>
-                    </div>
-                </div>
-                <div className="center-navbar">
-                    <Link to="/">
-                        <img src={MisshaLogo} alt="missha-logo" />
-                    </Link>
-                </div>
-                <div className="right-navbar">
-                    <div className="item">
-                        <Link to="/">About</Link>
-                    </div>
-                    <div className="item">
-                        <Link to="/">Contact</Link>
-                    </div>
-                    <div className="icons">
-                        <div className="searchIcon" onClick={() => setSearchOpen(!searchOpen)}>
-                            <Search/> 
-                        </div>
-                        {jwt ? (
-                            <>
-                                <LogoutOutlined onClick={() => {setJwt(null); navigate("/")}}/>
-                                <FavoriteBorderOutlined/>
-                            </>
-                        ) : (
-                            <Link to="/auth"><PersonOutlineOutlined/></Link> 
-                        )}
-                        <div className="cartIcon" onClick={() => setCartOpen(!cartOpen)}>
-                            <ShoppingCartOutlined/> 
-                            <span>{data.length}</span>
-                        </div>
-                    </div>
-                </div>
+      <div className="navbar">
+        <div className="wrapper">
+          <div className="left-navbar">
+            <div className="item">
+              <Link to="/products/3">New</Link>
             </div>
-            {cartOpen && <Cart/>}
-            {searchOpen && <SearchBar onClose={() => setSearchOpen(!searchOpen)}/>}
+            <div className="item">
+              <Link to="/products/1">Women</Link>
+            </div>
+            <div className="item">
+              <Link to="/products/2">Men</Link>
+            </div>
+          </div>
+          <div className="center-navbar">
+            <Link to="/">
+              <img src={MisshaLogo} alt="missha-logo" />
+            </Link>
+          </div>
+          <div className="right-navbar">
+            <div className="item">
+              <Link to="/">About</Link>
+            </div>
+            <div className="item">
+              <Link to="/">Contact</Link>
+            </div>
+            <div className="icons">
+              <div
+                className="searchIcon"
+                onClick={() => setSearchOpen(!searchOpen)}
+              >
+                <Search />
+              </div>
+              {jwt ? (
+                <>
+                  <LogoutOutlined onClick={() => {setJwt(null); navigate("/");}}/>
+                  <Link to="/favorite">
+                    <FavoriteBorderOutlined />
+                  </Link>
+                </>
+              ) : (
+                <Link to="/auth">
+                  <PersonOutlineOutlined />
+                </Link>
+              )}
+              <div className="cartIcon" onClick={() => setCartOpen(!cartOpen)}>
+                <ShoppingCartOutlined />
+                <span>{data.length}</span>
+              </div>
+            </div>
+          </div>
         </div>
-    )
+        {cartOpen && <Cart />}
+        {searchOpen && <SearchBar onClose={() => setSearchOpen(!searchOpen)} />}
+      </div>
+    );
 }
