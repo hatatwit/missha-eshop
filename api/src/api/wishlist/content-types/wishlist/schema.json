@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "favorites",
+  "collectionName": "wishlists",
   "info": {
-    "singularName": "favorite",
-    "pluralName": "favorites",
-    "displayName": "Favorite",
+    "singularName": "wishlist",
+    "pluralName": "wishlists",
+    "displayName": "Wishlist",
     "description": ""
   },
   "options": {

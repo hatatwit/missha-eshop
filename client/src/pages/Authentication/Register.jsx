@@ -6,7 +6,7 @@ import RegisterForm from "../../components/Auth/RegisterForm";
 
 export default function Register() {
   const navigate = useNavigate();
-  const [jwt, setJwt] = useContext(UserContext);
+  const {jwt, setJwt} = useContext(UserContext);
   const [userData, setUserData] = useState({
     username: "",
     email: "",
@@ -34,7 +34,7 @@ export default function Register() {
         process.env.REACT_APP_API_URL + "/auth/local/register",
         userData
       );
-      setJwt(res.data.jwt);
+      setJwt(res.data);
       console.log("Register successfully!");
     } catch (error) {
       console.log(error);
@@ -44,8 +44,7 @@ export default function Register() {
 
   useEffect(() => {
     if (jwt !== null) {
-      console.log("New: " + jwt);
-      navigate("/?token=" + jwt);
+      navigate(`/?token=${jwt.jwt}`);
     }
   }, [jwt]);
 

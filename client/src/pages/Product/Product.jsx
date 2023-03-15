@@ -8,6 +8,8 @@ import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { increment } from "../../utils/redux/cartReducer";
 
+
+
 import "./Product.scss";
 
 export default function Product() {
@@ -17,9 +19,11 @@ export default function Product() {
   const productId = useParams().id;
   const dispatch = useDispatch();
 
+
   const { data, loading, error } = useFetch(
     `/products/${productId}?populate=*`
   );
+
 
   return (
     <div className="product">
@@ -105,7 +109,9 @@ export default function Product() {
                 </button>
               </div>
               <div className="item">
-                <FavoriteBorder /> ADD TO WISH
+                <button className="favorite">
+                  <FavoriteBorder/>
+                </button>
               </div>
             </div>
             <hr />

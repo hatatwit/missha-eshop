@@ -22,7 +22,7 @@ export default function Navbar() {
     const data = useSelector(state => state.cart.products);
 
     const navigate = useNavigate();
-    const [jwt, setJwt] = useContext(UserContext);
+    const {jwt, setJwt} = useContext(UserContext);
 
     return (
       <div className="navbar">
@@ -60,7 +60,7 @@ export default function Navbar() {
               {jwt ? (
                 <>
                   <LogoutOutlined onClick={() => {setJwt(null); navigate("/");}}/>
-                  <Link to="/favorite">
+                  <Link to="/wishlist">
                     <FavoriteBorderOutlined />
                   </Link>
                 </>

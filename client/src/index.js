@@ -12,7 +12,7 @@ root.render(
   <React.StrictMode>
     <UserProvider>
       <Provider store={store}>
-        <PersistGate loading={"loading"} persistor={persistor}>
+          <PersistGate loading={"loading"} persistor={persistor}>
           <App />
         </PersistGate>
       </Provider>

@@ -6,7 +6,7 @@ import LoginForm from "../../components/Auth/LoginForm";
 
 export default function Login() {
   const navigate = useNavigate();
-  const [jwt, setJwt] = useContext(UserContext);
+  const {jwt, setJwt} = useContext(UserContext);
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -32,8 +32,7 @@ export default function Login() {
         process.env.REACT_APP_API_URL + "/auth/local",
         userData
       );
-      setJwt(res.data.jwt);
-      console.log("Response: " + JSON.stringify(res));
+      setJwt(res.data);
       console.log("Login successfully!");
     } catch (error) {
       console.log(error);
@@ -43,8 +42,7 @@ export default function Login() {
 
   useEffect(() => {
     if (jwt !== null) {
-      console.log("New: " + jwt);
-      navigate("/?token=" + jwt);
+      navigate(`/?token=${jwt.jwt}`);
     }
   }, [jwt]);
 
@@ -55,3 +53,4 @@ export default function Login() {
     </div>
   );
 }
+
