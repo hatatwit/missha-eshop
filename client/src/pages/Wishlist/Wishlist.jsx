@@ -4,6 +4,8 @@ import { UserContext } from "../../context/AuthContext";
 import { NotInterestedOutlined, ClearAllOutlined } from "@mui/icons-material";
 import Card from "../../components/Card/Card";
 
+import "./styles.scss";
+
 
 export default function Wishlist() {
   const {jwt, setJwt} = useContext(UserContext); 
@@ -59,13 +61,15 @@ export default function Wishlist() {
 
 
   return (
-    <div className="favorite">
-      <h1>Wishlist</h1>
-      {data
+    <div className="wishlist-container">
+      <h2>Wishlist</h2>
+      <div className="wishlist">
+        {data
         ? data.map((item) => <Card item={item} key={item.id} />)
         : <p>Empty</p>}
-      <NotInterestedOutlined /> Remove
-      <ClearAllOutlined /> Reset
+      </div>
+      {/* <NotInterestedOutlined /> Remove
+      <ClearAllOutlined /> Reset */}
     </div>
   );
 }

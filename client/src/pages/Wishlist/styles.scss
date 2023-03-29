@@ -1,0 +1,14 @@
+.wishlist-container {
+  padding: 30px 50px;
+  h2 {
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  .wishlist {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+  }
+}

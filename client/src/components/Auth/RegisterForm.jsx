@@ -1,30 +1,37 @@
+import FormInput from "./FormInput";
+
+import "./Form.scss";
+
 export default function RegisterForm({ handleChange, handleSubmit, userData }) {
   return (
     <div className="register-form">
-      Register Form
+      <h2>Register Form</h2>
       <form onSubmit={handleSubmit}>
-        <input
+        <FormInput
+          label="Email"
+          type="email"
+          required
           onChange={handleChange}
           name="email"
-          placeholder="email"
           value={userData.email}
-          type="email"
         />
-        <input
+        <FormInput
+          label="Username"
+          type="text"
+          required
           onChange={handleChange}
           name="username"
-          placeholder="username"
           value={userData.username}
-          type="text"
         />
-        <input
+         <FormInput
+          label="Password"
+          type="password"
+          required
           onChange={handleChange}
           name="password"
-          placeholder="Password"
           value={userData.password}
-          type="password"
         />
-        <button>Submit</button>
+        <button>SIGN UP</button>
       </form>
     </div>
   );

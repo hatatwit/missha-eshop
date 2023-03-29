@@ -1,23 +1,29 @@
+import FormInput from "./FormInput";
+
+import "./Form.scss";
+
 export default function LoginForm({ handleChange, handleSubmit, userData }) {
   return (
     <div className="login-form">
-      Login Form
+      <h2>Login Form</h2>
       <form onSubmit={handleSubmit}>
-        <input
+        <FormInput
+          label="Email"
+          type="email"
+          required
           onChange={handleChange}
           name="identifier"
-          placeholder="identifier"
           value={userData.identifier}
-          type="email"
         />
-        <input
+        <FormInput
+          label='Password'
+          type='password'
+          required
           onChange={handleChange}
-          name="password"
-          placeholder="Password"
+          name='password'
           value={userData.password}
-          type="password"
         />
-        <button>Submit</button>
+        <button>LOG IN</button>
       </form>
     </div>
   );
