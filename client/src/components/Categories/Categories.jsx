@@ -3,28 +3,29 @@ import { Link } from "react-router-dom";
 import "./Categories.scss";
 
 export default function Categories() {
+
   return (
     <div className="categories">
       <div className="col">
         <div className="row">
           <img
-            src="https://images.unsplash.com/photo-1516762689617-e1cffcef479d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=411&q=80"
-            alt=""
+            src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            alt="Tops & Tees"
           />
           <button>
-            <Link className="link" to="/products/1">
-              Sale
+            <Link className="link" to="/sub-category/1">
+              Tops & Tees
             </Link>
           </button>
         </div>
         <div className="row">
           <img
-            src="https://images.unsplash.com/photo-1579969406275-0b37fa82deca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=385&q=80"
-            alt=""
+            src="https://images.unsplash.com/photo-1609004000524-8e41bd4bb72c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            alt="Dresses & Skirts"
           />
           <button>
-            <Link to="/products/1" className="link">
-              Women
+            <Link to="/sub-category/2" className="link">
+              Dresses & Skirts
             </Link>
           </button>
         </div>
@@ -32,12 +33,12 @@ export default function Categories() {
       <div className="col">
         <div className="row">
           <img
-            src="https://images.unsplash.com/photo-1600950207944-0d63e8edbc3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
-            alt=""
+            src="https://images.unsplash.com/photo-1603217192634-61068e4d4bf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+            alt="Pants & Shorts"
           />
           <button>
-            <Link to="/products/3" className="link">
-              New Arrivals
+            <Link to="/sub-category/3" className="link">
+              Pants & Shorts
             </Link>
           </button>
         </div>
@@ -47,25 +48,24 @@ export default function Categories() {
           <div className="col">
             <div className="row">
               <img
-                src="https://images.unsplash.com/photo-1484515991647-c5760fcecfc7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=449&q=80"
-                alt=""
+                src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+                alt="Jackets"
               />
               <button>
-                <Link to="/products/2" className="link">
-                  Men
+                <Link to="/sub-category/4" className="link">
+                  Jackets
                 </Link>
               </button>
             </div>
           </div>
           <div className="col">
             <div className="row">
-              {" "}
               <img
-                src="https://images.unsplash.com/photo-1511556820780-d912e42b4980?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-                alt=""
+                src="https://images.unsplash.com/photo-1569388330292-79cc1ec67270?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                alt="Accessories"
               />
               <button>
-                <Link to="/products/1" className="link">
+                <Link to="/sub-category/5" className="link">
                   Accessories
                 </Link>
               </button>
@@ -78,7 +78,7 @@ export default function Categories() {
             alt=""
           />
           <button>
-            <Link to="/products/1" className="link">
+            <Link to="/sub-category/6" className="link">
               Shoes
             </Link>
           </button>

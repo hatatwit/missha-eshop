@@ -14,7 +14,7 @@ import "./Product.scss";
 
 export default function Product() {
   const [selectedImg, setSelectedImg] = useState("img");
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState(null);
   const productId = useParams().id;
   const dispatch = useDispatch();

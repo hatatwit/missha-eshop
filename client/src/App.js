@@ -11,7 +11,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Auth from "./pages/Authentication/Auth";
 import Wishlist from "./pages/Wishlist/Wishlist";
-
+import SubCategory from "./pages/Products/SubCategory";
 
 const Layout = () => {
   return (
@@ -33,12 +33,16 @@ const router = createBrowserRouter([
         element: <Home/>
       },
       {
-        path: "/products/:id",
+        path: "/products/:id/",
         element: <Products/>
       },
       {
         path: "/product/:id",
         element: <Product/>
+      },
+      {
+        path: "/sub-category/:id",
+        element: <SubCategory/>
       },
       {
         path: "/wishlist",

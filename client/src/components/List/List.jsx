@@ -3,12 +3,18 @@ import useFetch from "../../hooks/useFetch";
 
 import "./List.scss";
 
-export default function List({ subCat, maxPrice, sort, catId }) {
+export default function List({ subCat, maxPrice, sort, catId, isCat }) {
   const { data, loading, error } = useFetch(
-    `/products?populate=*&[filters][categories][id]=${catId}${subCat
-      .map((item) => `&[filters][sub_categories][id][$eq]=${item}`)
-      .join("")}&[filters][price][$lte]=${maxPrice}&sort=price:${sort}`
+    isCat 
+      ? `/products?populate=*&[filters][categories][id]=${catId}${subCat
+        .map((item) => `&[filters][sub_categories][id][$eq]=${item}`)
+        .join("")}&[filters][price][$lte]=${maxPrice}&sort=price:${sort}`
+      : `/products?populate=*&[filters][sub_categories][id][$eq]=${catId}${subCat
+        .map((item) => `&[filters][categories][id][$eq]=${item}`)
+        .join("")}&[filters][price][$lte]=${maxPrice}&sort=price:${sort}`
   );
+
+  console.log(data);
 
   return (
     <div className="list">

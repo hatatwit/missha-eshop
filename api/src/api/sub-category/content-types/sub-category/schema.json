@@ -15,6 +15,16 @@
     "title": {
       "type": "string"
     },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
     "products": {
       "type": "relation",
       "relation": "manyToMany",
