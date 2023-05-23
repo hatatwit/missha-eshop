@@ -4,7 +4,7 @@ import Slider from "../../components/Slider/Slider";
 
 export default function Home() {
     return (
-        <div className="Home">
+        <div className="home">
             <Slider/>
             <FeaturedProducts type="newest"/>
             <Categories/>

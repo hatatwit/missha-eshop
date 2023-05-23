@@ -1,0 +1,27 @@
+.collapsible-section {
+  padding: 20px 23px 15px;
+  font-size: .875rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-top: 1px solid #000;
+
+  .collapsible-content {
+    padding: 10px;
+    display: none;
+    &.active {
+        display: block;
+        p {
+            margin: 1em 0;
+            padding: 0;
+            line-height: 1.5em;
+            letter-spacing: .02em;
+            font-weight: 400;
+            text-size-adjust: 100%;
+        }
+    }
+  }
+  .expandIcon {
+    float: right;
+  }
+}

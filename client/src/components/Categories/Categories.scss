@@ -46,5 +46,12 @@
       object-fit: cover;
     }
   }
+
+  @media (max-width: 615px) {
+    & {
+      flex-direction: column;
+    }
+  }
 }
  
+
