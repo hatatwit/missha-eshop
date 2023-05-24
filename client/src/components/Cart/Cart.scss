@@ -74,4 +74,12 @@
     left: 50%;
     margin: auto;
   }
+
+  @media (max-width: 615px) {
+    & {
+      right: 0;
+      top: 60px;
+      width: 300px;
+    }
+  }
 }

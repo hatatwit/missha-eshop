@@ -5,7 +5,8 @@ import "./Form.scss";
 export default function RegisterForm({ handleChange, handleSubmit, userData }) {
   return (
     <div className="register-form">
-      <h2>Register Form</h2>
+      <h2>Don't have an account?</h2>
+      <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Email"

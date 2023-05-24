@@ -18,6 +18,7 @@ import MisshaLogo from "../../assets/favicon.png";
 
 import "./Navbar.scss";
 
+
 export default function Navbar() {
   const [cartOpen, setCartOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -86,11 +87,9 @@ export default function Navbar() {
       </div>
 
       <div className="mobile-navbar">
-        <button
-          className="mobile-navbar-button"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          <MenuOutlined className="menuIcon" />
+        <button className="mobile-navbar-button" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          {mobileMenuOpen ? <CloseOutlined className="menuIcon" /> : <MenuOutlined className="menuIcon" /> }
+          
         </button>
         <div className="searchIcon" onClick={() => setSearchOpen(!searchOpen)}>
           <Search />
@@ -105,9 +104,27 @@ export default function Navbar() {
           <span>{data.length}</span>
         </div>
         <div className={`navbar-links ${mobileMenuOpen ? "active" : "hidden"}`}>
-          <Link to="/products/3">New</Link>
-          <Link to="/products/1">Women</Link>
-          <Link to="/products/2">Men</Link>
+          <Link to="/products/3"  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>New</Link>
+          <Link to="/products/1"  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>Women</Link>
+          <Link to="/products/2"  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>Men</Link>
+          {jwt ? (
+              <>
+                <LogoutOutlined
+                  onClick={() => {
+                    setJwt(null);
+                    navigate("/");
+                    setMobileMenuOpen(!mobileMenuOpen)
+                  }}
+                />
+                <Link to="/wishlist" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                  <FavoriteBorderOutlined />
+                </Link>
+              </>
+            ) : (
+              <Link to="/auth" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                <PersonOutlineOutlined />
+              </Link>
+            )}
         </div>
       </div>
 

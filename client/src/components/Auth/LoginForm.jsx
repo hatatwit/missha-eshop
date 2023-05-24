@@ -5,7 +5,8 @@ import "./Form.scss";
 export default function LoginForm({ handleChange, handleSubmit, userData }) {
   return (
     <div className="login-form">
-      <h2>Login Form</h2>
+      <h2>Already have an account?</h2>
+      <span>Sign in with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Email"
