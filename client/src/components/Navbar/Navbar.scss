@@ -126,6 +126,9 @@
         right: 19px;
         top: 18px;
       }
+      .navbar-links.hidden {
+        display: none;
+      }
       .navbar-links.active {
         display: flex;
         flex-direction: column;
