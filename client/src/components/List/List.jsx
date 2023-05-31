@@ -14,8 +14,6 @@ export default function List({ subCat, maxPrice, sort, catId, isCat }) {
         .join("")}&[filters][price][$lte]=${maxPrice}&sort=price:${sort}`
   );
 
-  console.log(data);
-
   return (
     <div className="list">
       {error

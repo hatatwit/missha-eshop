@@ -23,6 +23,10 @@
         }
       }
     }
+    
+    .mobile-filters {
+      display: none;
+    }
   }
 
   .right {
@@ -50,6 +54,113 @@
   @media (max-width: 615px) {
     & {
       flex-direction: column;
+      padding: 15px;
+
+      .left {
+        position: static;
+        margin-bottom: 1rem;
+
+        .desktop-filters {
+          display: none;
+        }
+
+        .mobile-filters {
+          display: block;
+          height: 50px;
+
+          .catImg {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            position: relative;
+          }
+
+          .cat-title {
+            position: absolute;
+            color: white;
+            font-size: 40px;
+            letter-spacing: .5rem;
+            text-align:center;
+            top: 22%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          
+          .collapsible-section {
+            display: block;
+            border: 1px solid #000;
+            width: 50%;
+            float: left;
+            padding: 12px;
+          }
+
+          .filterBtn {
+            display: block;
+            float: left;
+            border: none;
+            background: none;
+            margin-left: 25px;
+            svg {
+              font-size: 45px;
+              font-weight: 200;
+            }
+          }
+
+          .filterModal{
+            background-color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            .filter-header {
+              display: block;
+              position: relative;
+              border-bottom: 1px solid #ccc;
+              padding: 18px 0;
+              margin-bottom: 1rem;
+              text-align: center;
+              font-weight: 700;
+              font-size: 0.875rem;
+              letter-spacing: 0.125em;
+              text-transform: uppercase;
+              .closeModel {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 12px;
+                cursor: pointer;
+              }
+            }
+            .filter-body {
+              display: flex;
+              flex-flow: column;
+              justify-content: space-around;
+              align-items: center;
+              gap: 10px;
+
+              .collapsible-section {
+                display: block;
+                border: none;
+                border-bottom: 1px solid #000;
+                // padding-bottom: 6px;
+                // margin-bottom: 15px;
+                width: 90%;
+                float: left;
+                padding: 12px;
+              }    
+            }
+          }
+
+        }
+      }
+
+      .right {
+        .catImg{
+          display: none;
+        }
+      }
     }
   }
 }
