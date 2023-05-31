@@ -32,7 +32,7 @@ $main-color: black;
       @include shrinkLabel();
     }
 
-    @media (max-width: 615px) {
+    @media (max-width: 767px) {
       width: 95%;
     }
 
@@ -75,7 +75,7 @@ $main-color: black;
     border: none;
   }
 
-  @media (max-width: 615px) {
+  @media (max-width: 767px) {
     width: 350px;
   }
 }

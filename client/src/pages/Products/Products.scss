@@ -51,7 +51,7 @@
     }
   }
 
-  @media (max-width: 615px) {
+  @media (max-width: 767px) {
     & {
       flex-direction: column;
       padding: 15px;
@@ -101,6 +101,7 @@
             border: none;
             background: none;
             margin-left: 25px;
+            color: #000;
             svg {
               font-size: 45px;
               font-weight: 200;

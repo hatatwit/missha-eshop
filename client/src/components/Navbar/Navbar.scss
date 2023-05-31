@@ -67,7 +67,8 @@
     display: none;
   }
 
-  @media (max-width: 615px) {
+
+  @media (max-width: 767px) {
     & {
       height: 59px;
 
@@ -85,6 +86,7 @@
         .mobile-navbar-button {
           border: none;
           background: none;
+          color: #000;
           cursor: pointer;
           position: absolute;
           border: none;
