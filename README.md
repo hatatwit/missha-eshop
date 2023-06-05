@@ -23,7 +23,7 @@ $ cd client
 $ npm install
 ```
 3. Configure your environment variables for Stripe integration and Strapi database connection in the .env file. Read prerequisites section for more instructions.
-4. Start the front-end and back-end servers by opening two separate terminal:
+4. Start the front-end and back-end servers by opening two separate terminals:
 - **Terminal 1**
 ```bash
 $ cd client
@@ -40,7 +40,7 @@ $ ENV_PATH=./.env.production NODE_ENV=production npm run start
 ## Prerequisites
 Before you start, ensure that you have the following prerequisites:
 * Create Stripe account and get API keys
-* Create Railway account and deploy Postgres Database to get its environment variables
+* Create Railway account and deploy Postgres database to get its environment variables
 
 To set up the .env file, please follow these steps:
 ### ./missha-eshop/api/.env
