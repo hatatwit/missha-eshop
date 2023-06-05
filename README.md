@@ -23,7 +23,7 @@ $ cd client
 $ npm install
 ```
 3. Configure your environment variables for Stripe integration and Strapi database connection in the .env file. Read prerequisites section for more instructions.
-4. Start the front-end and back-end servers by open two separate terminal:
+4. Start the front-end and back-end servers by opening two separate terminal:
 - **Terminal 1**
 ```bash
 $ cd client
