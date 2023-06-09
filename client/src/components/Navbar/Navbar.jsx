@@ -108,7 +108,7 @@ export default function Navbar() {
           <Link to="/products/1"  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>Women</Link>
           <Link to="/products/2"  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>Men</Link>
           {jwt ? (
-              <>
+              <div className="authenticated">
                 <LogoutOutlined
                   onClick={() => {
                     setJwt(null);
@@ -119,7 +119,7 @@ export default function Navbar() {
                 <Link to="/wishlist" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
                   <FavoriteBorderOutlined />
                 </Link>
-              </>
+              </div>
             ) : (
               <Link to="/auth" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
                 <PersonOutlineOutlined />

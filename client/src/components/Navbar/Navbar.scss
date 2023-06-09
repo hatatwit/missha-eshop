@@ -105,6 +105,14 @@
             vertical-align: middle;
           }
         }
+
+        .authenticated {
+          display: flex;flex-direction: column;
+          justify-content: flex-start;
+          height: 30px;
+          width: 120px;
+          color: #000;
+        }
       }
       .logoIcon {
         display: flex;

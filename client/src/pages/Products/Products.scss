@@ -115,6 +115,7 @@
             left: 0;
             right: 0;
             bottom: 0;
+            z-index: 4;
             .filter-header {
               display: block;
               position: relative;
@@ -158,6 +159,9 @@
       }
 
       .right {
+        .cat-title {
+          display: none;
+        }
         .catImg{
           display: none;
         }
